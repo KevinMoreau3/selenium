@@ -30,7 +30,7 @@ public class TestChrome {
 	
 	@Before
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\k.moreau\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".\\lib\\chromedriver.exe");
 		//System.setProperty("webdriver.ie.driver", "C:\\Users\\k.moreau\\Downloads\\IEDriverServer_x64_2.41.0\\IEDriverServer.exe");
     }
 	
