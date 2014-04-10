@@ -34,7 +34,11 @@ public static WebDriver driver;
 	
 	@Before
 	public void setUp() throws Exception {
+<<<<<<< HEAD
 		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\k.moreau\\Downloads\\chromedriver_win32\\chromedriver.exe");
+=======
+		//System.setProperty("webdriver.chrome.driver", "../lib/chromedriver.exe");
+>>>>>>> e086657b3ee5dcdf63502eef2f11934df4bdf2d0
 		//System.setProperty("webdriver.ie.driver", "C:\\Users\\k.moreau\\Downloads\\IEDriverServer_x64_2.41.0\\IEDriverServer.exe");
     driver = new RemoteWebDriver(new URL("http://10.1.12.93:4444/wd/hub"), DesiredCapabilities.chrome());
 	}
@@ -96,7 +100,7 @@ public static WebDriver driver;
 	assertEquals(att, act);
 	driver.close();
 	driver.switchTo().window(parentWindow);
-	driver.findElement(By.linkText("Recherche avancée")).click();
+	driver.findElement(By.linkText("Recherche avancï¿½e")).click();
 		
 		
 	}
@@ -114,6 +118,7 @@ public static WebDriver driver;
 	//@Test
 	public void SuiteTest() throws Exception 
 	{
+<<<<<<< HEAD
 		//WebDriver driver = new ChromeDriver();
 		//WebDriver driver = new FirefoxDriver();
 		 //WebDriver driver = new InternetExplorerDriver();
@@ -121,6 +126,14 @@ public static WebDriver driver;
 		//WebDriver driver = new RemoteWebDriver(new URL("http://10.1.12.93:4444/wd/hub"), capability);
 		//driver.manage().window().setSize(new Dimension(320, 480));
        // testPageLogin(driver);
+=======
+	//	WebDriver driver = new ChromeDriver();
+		 //WebDriver driver = new InternetExplorerDriver();
+		 DesiredCapabilities capability = DesiredCapabilities.chrome();
+		WebDriver driver = new RemoteWebDriver(new URL("http://10.1.12.93:4445/wd/hub"), capability);
+		driver.manage().window().setSize(new Dimension(320, 480));
+        testPageLogin(driver);
+>>>>>>> e086657b3ee5dcdf63502eef2f11934df4bdf2d0
 		/*testLogin(driver);
 		testGabaritEmploi(driver);
 		testApplication(driver);*/
