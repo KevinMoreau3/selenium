@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import java.net.URL;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -14,7 +15,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,13 +30,14 @@ import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
 
 
 public class TestChrome {
-
+public static WebDriver driver;
 	
 	@Before
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", ".\\lib\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\k.moreau\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		//System.setProperty("webdriver.ie.driver", "C:\\Users\\k.moreau\\Downloads\\IEDriverServer_x64_2.41.0\\IEDriverServer.exe");
-    }
+    driver = new RemoteWebDriver(new URL("http://10.1.12.93:4444/wd/hub"), DesiredCapabilities.chrome());
+	}
 	
 
 	@After
@@ -40,8 +45,8 @@ public class TestChrome {
     
 	}
 
-	
-	public void testPageLogin(WebDriver driver) throws InterruptedException {
+	@Test
+	public void testPageLogin() throws InterruptedException {
 	
 		driver.get("http://www169.ratp.fr/fr/");
 	//	assertEquals("m@cci - Identification", driver.getTitle());
@@ -106,13 +111,16 @@ public class TestChrome {
 		    }
 	}
 
-	@Test
+	//@Test
 	public void SuiteTest() throws Exception 
 	{
-		WebDriver driver = new ChromeDriver();
+		//WebDriver driver = new ChromeDriver();
+		//WebDriver driver = new FirefoxDriver();
 		 //WebDriver driver = new InternetExplorerDriver();
-		driver.manage().window().setSize(new Dimension(320, 480));
-        testPageLogin(driver);
+		//DesiredCapabilities capability = DesiredCapabilities.chrome();
+		//WebDriver driver = new RemoteWebDriver(new URL("http://10.1.12.93:4444/wd/hub"), capability);
+		//driver.manage().window().setSize(new Dimension(320, 480));
+       // testPageLogin(driver);
 		/*testLogin(driver);
 		testGabaritEmploi(driver);
 		testApplication(driver);*/

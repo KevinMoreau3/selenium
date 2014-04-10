@@ -8,8 +8,8 @@
     <property name="ECLIPSE_HOME" value="../../Downloads/eclipse-jee-juno-SR2-win32-x86_64/eclipse"/>
     <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.7"/>
-    <property name="source" value="1.7"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
     <path id="TestJenkins.classpath">
         <pathelement location="bin"/>
         <pathelement location="lib/selenium-java-2.41.0.jar"/>
@@ -56,7 +56,7 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="TestChrome">
+    <target name="TestChrome (1)">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
