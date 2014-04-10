@@ -30,7 +30,7 @@ public class TestChrome {
 	
 	@Before
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "../lib/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "../lib/chromedriver.exe");
 		//System.setProperty("webdriver.ie.driver", "C:\\Users\\k.moreau\\Downloads\\IEDriverServer_x64_2.41.0\\IEDriverServer.exe");
     }
 	
@@ -109,8 +109,10 @@ public class TestChrome {
 	@Test
 	public void SuiteTest() throws Exception 
 	{
-		WebDriver driver = new ChromeDriver();
+	//	WebDriver driver = new ChromeDriver();
 		 //WebDriver driver = new InternetExplorerDriver();
+		 DesiredCapabilities capability = DesiredCapabilities.chrome();
+		WebDriver driver = new RemoteWebDriver(new URL("http://10.1.12.93:4445/wd/hub"), capability);
 		driver.manage().window().setSize(new Dimension(320, 480));
         testPageLogin(driver);
 		/*testLogin(driver);
