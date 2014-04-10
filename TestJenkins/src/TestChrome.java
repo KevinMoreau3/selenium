@@ -30,7 +30,7 @@ public class TestChrome {
 	
 	@Before
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", ".\\lib\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "../lib/chromedriver.exe");
 		//System.setProperty("webdriver.ie.driver", "C:\\Users\\k.moreau\\Downloads\\IEDriverServer_x64_2.41.0\\IEDriverServer.exe");
     }
 	
@@ -91,7 +91,7 @@ public class TestChrome {
 	assertEquals(att, act);
 	driver.close();
 	driver.switchTo().window(parentWindow);
-	driver.findElement(By.linkText("Recherche avancée")).click();
+	driver.findElement(By.linkText("Recherche avancï¿½e")).click();
 		
 		
 	}
