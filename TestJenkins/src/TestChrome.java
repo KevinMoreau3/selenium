@@ -36,7 +36,7 @@ public static WebDriver driver;
 	public void setUp() throws Exception {
 		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\k.moreau\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		//System.setProperty("webdriver.ie.driver", "C:\\Users\\k.moreau\\Downloads\\IEDriverServer_x64_2.41.0\\IEDriverServer.exe");
-    driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.chrome());
+    driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.firefox());
     driver.manage().window().setSize(new Dimension(320, 480));
 	}
 	
